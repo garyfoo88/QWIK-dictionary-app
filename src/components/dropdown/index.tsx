@@ -1,6 +1,13 @@
-import { component$, useStylesScoped$ } from "@builder.io/qwik";
+import { component$, useStore } from "@builder.io/qwik";
+import Element from "./element";
+
+export const LANGUAGES = ["ENGLISH", "VIETNAMESE"];
 
 export default component$(() => {
+  const state = useStore({
+    languageSelected: "SELECT LANGUAGE",
+  });
+
   return (
     <>
       <div class="flex justify-center">
@@ -34,7 +41,7 @@ export default component$(() => {
               data-bs-toggle="dropdown"
               aria-expanded="false"
             >
-              Dropdown button
+              {state.languageSelected}
               <svg
                 aria-hidden="true"
                 focusable="false"
@@ -56,7 +63,6 @@ export default component$(() => {
           dropdown-menu
           min-w-max
           absolute
-          hidden
           bg-white
           text-base
           z-50
@@ -74,66 +80,9 @@ export default component$(() => {
         "
               aria-labelledby="dropdownMenuButton1"
             >
-              <li>
-                <a
-                  class="
-              dropdown-item
-              text-sm
-              py-2
-              px-4
-              font-normal
-              block
-              w-full
-              whitespace-nowrap
-              bg-transparent
-              text-gray-700
-              hover:bg-gray-100
-            "
-                  href="#"
-                >
-                  Action
-                </a>
-              </li>
-              <li>
-                <a
-                  class="
-              dropdown-item
-              text-sm
-              py-2
-              px-4
-              font-normal
-              block
-              w-full
-              whitespace-nowrap
-              bg-transparent
-              text-gray-700
-              hover:bg-gray-100
-            "
-                  href="#"
-                >
-                  Another action
-                </a>
-              </li>
-              <li>
-                <a
-                  class="
-              dropdown-item
-              text-sm
-              py-2
-              px-4
-              font-normal
-              block
-              w-full
-              whitespace-nowrap
-              bg-transparent
-              text-gray-700
-              hover:bg-gray-100
-            "
-                  href="#"
-                >
-                  Something else here
-                </a>
-              </li>
+              {LANGUAGES.map((e, i) => {
+                return <Element key={i} language={e} />;
+              })}
             </ul>
           </div>
         </div>

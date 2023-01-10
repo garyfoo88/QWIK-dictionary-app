@@ -46,24 +46,14 @@ export default component$(() => {
                   Home
                 </a>
               </li>
-              <li class="nav-item">
+              <li class="nav-item mb-2 lg:mb-0">
                 <a
                   class="mr-5  nav-link block pr-2 lg:px-2 py-2 text-gray-600 hover:text-gray-700 focus:text-gray-700 transition duration-150 ease-in-out"
                   href="#!"
                   data-mdb-ripple="true"
                   data-mdb-ripple-color="light"
                 >
-                  Features
-                </a>
-              </li>
-              <li class="nav-item">
-                <a
-                  class="mr-5  nav-link block pr-2 lg:px-2 py-2 text-gray-600 hover:text-gray-700 focus:text-gray-700 transition duration-150 ease-in-out"
-                  href="#!"
-                  data-mdb-ripple="true"
-                  data-mdb-ripple-color="light"
-                >
-                  Pricing
+                  About
                 </a>
               </li>
               <li class="nav-item mb-2 lg:mb-0">
@@ -73,7 +63,7 @@ export default component$(() => {
                   data-mdb-ripple="true"
                   data-mdb-ripple-color="light"
                 >
-                  About
+                  Logout
                 </a>
               </li>
             </ul>

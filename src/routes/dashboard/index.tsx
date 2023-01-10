@@ -2,12 +2,11 @@ import {
   component$,
   useClientEffect$,
   useStore,
-  useTask$,
 } from "@builder.io/qwik";
 import { DocumentHead } from "@builder.io/qwik-city";
-import { loginUser } from "~/api/loginUser";
 import DashHeader from "~/components/dashHeader/dashHeader";
 import Dropdown from "~/components/dropdown";
+import SearchBar from "~/components/searchBar";
 import Table from "~/components/table";
 
 export default component$(() => {
@@ -40,11 +39,10 @@ export default component$(() => {
           role="group"
         >
           <Dropdown />
-          {"<=>"}
+          TO
           <Dropdown />
         </div>
       </div>
-
       <Table />
     </>
   );
